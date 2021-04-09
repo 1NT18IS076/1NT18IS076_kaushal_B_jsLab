@@ -1,0 +1,54 @@
+<!-- Title: Form events -->
+<!-- Description: testing click events with forms -->
+<!-- Author: Kaushal@1NT18IS076 -->
+<!-- Date: 9/4/21 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <h1>Form events</h1>
+    <form>
+      <input
+        id="fname"
+        type="text"
+        name="fname"
+        placeholder="first name"
+      /><br />
+      <input
+        id="lname"
+        type="text"
+        name="lname"
+        placeholder="last name"
+      /><br />
+      <input
+        id="email"
+        type="email"
+        name="email"
+        placeholder="email"
+      /><br /><br />
+
+      <button type="button" onclick="handleSubmit()">Submit</button>
+    </form>
+
+    <h2 id="result"></h2>
+
+    <script>
+      const fname = document.getElementById("fname");
+      const lname = document.getElementById("lname");
+      const email = document.getElementById("email");
+
+      const result = document.getElementById("result");
+
+      const handleSubmit = () => {
+        result.innerHTML = `Your name is ${fname.value} ${lname.value}, 
+        and email is ${email.value}`;
+      };
+    </script>
+  </body>
+</html>
