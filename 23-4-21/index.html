@@ -1,0 +1,146 @@
+<!-- Title: Rock, paper scissors game with scoreboard and animation, using objects -->
+<!-- Description: testing event listeners and injecting divs in a game of rock paper scissors with scoreboard -->
+<!-- Author: Kaushal@1NT18IS076 -->
+<!-- Date: 23/4/21 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Event listener</title>
+  </head>
+  <body>
+    <!-- <div id="area1" class="area-1">
+      <h2>Area 1</h2>
+      <div id="area2" class="area-2">
+        <h2>Area 2</h2>
+        <div id="area3" class="area-3">
+          <h2>Area 3</h2>
+          <div id="area4" class="area-4"><h2>Area 4</h2></div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="player">
+      <button class="choice" id="1">rock</button>
+      <button class="choice" id="2">paper</button>
+      <button class="choice" id="3">scissors</button>
+    </div>
+    <div class="comp">
+      <div class="comp-choice"></div>
+      <h3 id="result"></h3>
+    </div>
+
+    <div class="images">
+      <img
+        id="player"
+        src="https://k4u5h4l.github.io/RockPaperScissors/images/rock.png"
+        class="revImage"
+      />
+      <img
+        id="computer"
+        src="https://k4u5h4l.github.io/RockPaperScissors/images/rock.png"
+      />
+    </div>
+
+    <div class="scoreboard">
+      <h3><span id="playerName"></span> Score: <b id="playerScore"></b></h3>
+      <h3>Computer Score: <b id="compScore"></b></h3>
+    </div>
+
+    <div>
+      <button type="button" onclick="clearScores()">Reset scores</button>
+    </div>
+    <br />
+    <div>
+      <button type="button" onclick="clearLog()">Clear Log</button>
+    </div>
+
+    <div>
+      Scores:
+      <h6 id="totalScoreboard"></h6>
+    </div>
+
+    <div>
+      <br />
+      <br />
+      <br />
+    </div>
+
+    <hr />
+
+    <div>
+      <br />
+      <br />
+      <br />
+    </div>
+
+    <div class="logger-container">
+      <input type="text" placeholder="Type something" id="logger" />
+
+      <button onclick="pushIt()">Push it!</button>
+      <button onclick="popIt()">Pop it!</button>
+
+      <h4 id="logResult"></h4>
+    </div>
+
+    <script defer src="./script.js"></script>
+    <script>
+      const logBar = document.getElementById("logger");
+      const logRes = document.getElementById("logResult");
+      const logContainer = document.querySelector(".logger-container");
+
+      const logArr = [];
+
+      const clearScores = () => {
+        localStorage.setItem("comp", "0");
+        localStorage.setItem("player", "0");
+
+        playerScore.innerText = 0;
+        compScore.innerText = 0;
+
+        // setTimeout(() => {
+        //   window.location.reload();
+        // }, 2000);
+      };
+
+      const pushIt = () => {
+        const head2 = document.createElement("h2");
+        head2.innerText = `You have entered: ${logBar.value}`;
+        head2.className = `head2-${logBar.value}`;
+
+        logArr.push(logBar.value);
+        logBar.value = "";
+        logRes.innerText = JSON.stringify(logArr);
+
+        // console.log(logContainer);
+        logContainer.appendChild(head2);
+      };
+
+      const popIt = () => {
+        logArr.pop();
+        logContainer.removeChild(
+          // document.querySelector(`head2-${logBar.value}`)
+          logContainer.lastChild
+        );
+        logBar.value = "";
+        logRes.innerText = JSON.stringify(logArr);
+      };
+
+      const clearLog = () => {
+        clearScores();
+        localStorage.setItem("log", "[]");
+        window.location.reload();
+      };
+    </script>
+
+    <script>
+      const name = prompt("Enter your name");
+
+      document.getElementById("playerName").innerText = `${name}`;
+    </script>
+  </body>
+</html>
