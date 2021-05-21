@@ -45,5 +45,3 @@ console.log("Only people's name and age:");
 console.table(
   people.map((person) => ({ personName: person.name, personAge: person.age }))
 );
-
-console.log(people);
