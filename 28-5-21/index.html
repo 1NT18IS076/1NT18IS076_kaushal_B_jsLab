@@ -1,0 +1,101 @@
+<!-- Title: Search by ID -->
+<!-- Description: Search array of objects using ID -->
+<!-- Author: Kaushal@1NT18IS076 -->
+<!-- Date: 28/5/21 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search by ID</title>
+  </head>
+  <body>
+    <h3>Enter student details</h3>
+    <form>
+      <input type="text" class="usn" id="usn" name="usn" placeholder="USN" />
+      <input
+        type="text"
+        class="name"
+        id="name"
+        name="name"
+        placeholder="name"
+      />
+      <input
+        type="text"
+        class="branch"
+        id="branch"
+        name="branch"
+        placeholder="branch"
+      />
+
+      <input
+        type="text"
+        class="cgpa"
+        id="cgpa"
+        name="cgpa"
+        placeholder="Enter cgpa separated by comma (,)"
+      />
+
+      <br />
+      <br />
+
+      <button type="button" onclick="append()">Submit</button>
+    </form>
+
+    <div>
+      <h4 id="result"></h4>
+    </div>
+
+    <br />
+
+    <h3>Search for a student</h3>
+
+    <form>
+      <input
+        type="text"
+        class="search"
+        id="search"
+        name="search"
+        placeholder="Enter USN"
+      />
+      <br />
+      <br />
+
+      <button type="button" onclick="searchStudent()">Search</button>
+    </form>
+
+    <div>
+      <h4 id="searchResult"></h4>
+    </div>
+
+    <h3>Search for a student</h3>
+
+    <form>
+      <input
+        type="text"
+        class="modifyUsn"
+        id="modifyUsn"
+        name="modifyUsn"
+        placeholder="Enter USN to be modified"
+      />
+      <input
+        type="text"
+        class="cgpaPush"
+        id="cgpaPush"
+        name="cgpaPush"
+        placeholder="Enter CGPA to be pushed (only one)"
+      />
+      <br />
+      <br />
+
+      <button type="button" onclick="modify()">Modify</button>
+    </form>
+
+    <div>
+      <h4 id="modifyResult"></h4>
+    </div>
+    <script defer src="./script.js"></script>
+  </body>
+</html>
