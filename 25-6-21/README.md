@@ -1,8 +1,8 @@
 # Output
 
 ## Client/Browser:
-![seerver-op](Screenshot from 2021-06-25 11-48-03.png)
+![seerver-op](Screenshot%20from%202021-06-25%2011-48-03.png)
 
 ## Server/console:
 
-![client-op](Screenshot from 2021-06-25 11-49-30.png)
+![client-op](Screenshot%20from%202021-06-25%2011-49-30.png)
